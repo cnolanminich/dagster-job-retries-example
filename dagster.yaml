@@ -1,0 +1,24 @@
+run_retries:
+  enabled: true
+
+event_log_storage:
+  module: dagster_postgres.event_log
+  class: PostgresEventLogStorage
+  config:
+    postgres_db:
+      username: postgres_user
+      password: postgres_password
+      hostname: docker_postgresql
+      db_name: postgres_db
+      port: 5432
+    
+run_storage:
+  module: dagster_postgres
+  class: PostgresRunStorage
+  config:
+    postgres_db:
+      username: postgres_user
+      password: postgres_password
+      hostname: docker_postgresql
+      db_name: postgres_db
+      port: 5432

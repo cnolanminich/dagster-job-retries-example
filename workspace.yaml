@@ -1,0 +1,11 @@
+# load_from:
+#   - python_module:
+#       module_name: job_retries
+#       working_directory: /opt/dagster/app
+
+load_from:
+  # Each entry here corresponds to a container that exposes a gRPC server.
+  - grpc_server:
+      host: docker_code_location_1
+      port: 4000
+      location_name: "job_retries"
